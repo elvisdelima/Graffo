@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graffo.Web", "Graffo\Graffo.Web.csproj", "{264D6699-7BD6-4E12-973F-B327DA232FFF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graffo.Web.Tests", "Graffo.Tests\Graffo.Web.Tests.csproj", "{4252A61B-047D-4507-B2F2-5F96D39D334B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graffo.Core", "Graffo.Core\Graffo.Core.csproj", "{E2323085-EC35-4228-AC0A-06953825D60E}"
@@ -20,16 +18,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{313815
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graffo.Entidades", "Graffo.Entidades\Graffo.Entidades.csproj", "{4C63CCC4-9486-499F-BD3C-CCC46D21DB51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graffo.Web", "Graffo.Web\Graffo.Web.csproj", "{264D6699-7BD6-4E12-973F-B327DA232FFF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF98463F-6665-43A5-A254-4376EEF21A05} = {DF98463F-6665-43A5-A254-4376EEF21A05}
+		{E2323085-EC35-4228-AC0A-06953825D60E} = {E2323085-EC35-4228-AC0A-06953825D60E}
+		{4C63CCC4-9486-499F-BD3C-CCC46D21DB51} = {4C63CCC4-9486-499F-BD3C-CCC46D21DB51}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{264D6699-7BD6-4E12-973F-B327DA232FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{264D6699-7BD6-4E12-973F-B327DA232FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{264D6699-7BD6-4E12-973F-B327DA232FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{264D6699-7BD6-4E12-973F-B327DA232FFF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4252A61B-047D-4507-B2F2-5F96D39D334B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4252A61B-047D-4507-B2F2-5F96D39D334B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4252A61B-047D-4507-B2F2-5F96D39D334B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -46,6 +47,10 @@ Global
 		{4C63CCC4-9486-499F-BD3C-CCC46D21DB51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C63CCC4-9486-499F-BD3C-CCC46D21DB51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C63CCC4-9486-499F-BD3C-CCC46D21DB51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{264D6699-7BD6-4E12-973F-B327DA232FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264D6699-7BD6-4E12-973F-B327DA232FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264D6699-7BD6-4E12-973F-B327DA232FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264D6699-7BD6-4E12-973F-B327DA232FFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
