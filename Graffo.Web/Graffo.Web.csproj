@@ -57,6 +57,10 @@
       <HintPath>..\packages\Manatee.Trello.ManateeJson.1.1.0\lib\net45\Manatee.Trello.ManateeJson.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -123,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BO\ChartFactory.cs" />
+    <Compile Include="BO\HighchartsFactory.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -213,6 +218,10 @@
     <ProjectReference Include="..\Graffo.Core\Graffo.Core.csproj">
       <Project>{e2323085-ec35-4228-ac0a-06953825d60e}</Project>
       <Name>Graffo.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Graffo.Data\Graffo.Data.csproj">
+      <Project>{df98463f-6665-43a5-a254-4376eef21a05}</Project>
+      <Name>Graffo.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Graffo.Entidades\Graffo.Entidades.csproj">
       <Project>{4c63ccc4-9486-499f-bd3c-ccc46d21db51}</Project>

@@ -3,7 +3,7 @@ using Graffo.Entidades;
 using Graffo.Data;
 using Graffo.Web.BO;
 
-namespace Graffo.Web.BO
+namespace Graffo.Core.BO
 {
     public class ChartFactory
     {
