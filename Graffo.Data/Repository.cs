@@ -5,7 +5,7 @@ using System.Data.Entity;
 
 namespace Graffo.Data
 {
-    public class Repository<T> : IRepository<T> where T : Entidade
+    public class Repository<T> : IRepository<T> where T : Entity
     {
         protected GraffoContext context;
         protected bool disposing;

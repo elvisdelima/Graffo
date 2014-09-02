@@ -58,9 +58,13 @@
     <Compile Include="ChartDataSource.cs" />
     <Compile Include="GraffoContext.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Migrations\201407031514100_InitialMigration.cs" />
-    <Compile Include="Migrations\201407031514100_InitialMigration.Designer.cs">
-      <DependentUpon>201407031514100_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201408290214129_Initial.cs" />
+    <Compile Include="Migrations\201408290214129_Initial.Designer.cs">
+      <DependentUpon>201408290214129_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408290224536_Initial1.cs" />
+    <Compile Include="Migrations\201408290224536_Initial1.Designer.cs">
+      <DependentUpon>201408290224536_Initial1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,8 +116,11 @@
     <Content Include="Scripts\Highcharts-4.0.1\js\themes\skies.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201407031514100_InitialMigration.resx">
-      <DependentUpon>201407031514100_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201408290214129_Initial.resx">
+      <DependentUpon>201408290214129_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408290224536_Initial1.resx">
+      <DependentUpon>201408290224536_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

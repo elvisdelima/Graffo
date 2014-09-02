@@ -44,18 +44,6 @@
     <Reference Include="DotNet.Highcharts">
       <HintPath>..\packages\DotNet.Highcharts.4.0\lib\DotNet.Highcharts.dll</HintPath>
     </Reference>
-    <Reference Include="Manatee.Json">
-      <HintPath>..\packages\Manatee.Json.2.5.1\lib\net45\Manatee.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Manatee.StateMachine">
-      <HintPath>..\packages\Manatee.StateMachine.1.1\lib\net45\Manatee.StateMachine.dll</HintPath>
-    </Reference>
-    <Reference Include="Manatee.Trello">
-      <HintPath>..\packages\Manatee.Trello.0.6.9\lib\net45\Manatee.Trello.dll</HintPath>
-    </Reference>
-    <Reference Include="Manatee.Trello.ManateeJson">
-      <HintPath>..\packages\Manatee.Trello.ManateeJson.1.1.0\lib\net45\Manatee.Trello.ManateeJson.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -126,9 +114,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BO\ChartFactory.cs" />
-    <Compile Include="BO\HighchartsFactory.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TrelloController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -151,6 +138,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.js" />
@@ -186,6 +174,7 @@
     <Content Include="Scripts\Highcharts-4.0.1\js\themes\grid.js" />
     <Content Include="Scripts\Highcharts-4.0.1\js\themes\sand-signika.js" />
     <Content Include="Scripts\Highcharts-4.0.1\js\themes\skies.js" />
+    <Content Include="Scripts\highcharts-ng.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />

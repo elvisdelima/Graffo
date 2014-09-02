@@ -1,8 +1,64 @@
-﻿@{
+﻿@model Graffo.Core.DTO.QuantidadeDeCartoesPorLista
+
+@{
     ViewBag.Title = "Index";
 }
 
-@(Model)
 
+<div ng-app="myapp">
+    <div ng-controller="myctrl">
+        <div class="span12">
+            <button class="btn btn-success" ng-click="loadChart()">Carregar Gráfico</button>
+        </div>
+        <br/>
+        <div class="row">
+            <highchart id="chart1" config="chartConfig" class="span10"></highchart>
+        </div>
+    </div>
+</div>
 
+<script>
+    var myapp = angular.module('myapp', ["highcharts-ng"]);
 
+    myapp.controller('myctrl', function ($scope, $http) {
+        $scope.series = {};
+        $scope.categories = {};
+
+        $scope.loadChart = function (item, event) {
+            $scope.chartConfig.loading = true;
+            var response = $http.get("home/loadchart");
+
+            response.success(function(data, status, headers, config) {
+                $scope.chartConfig.xAxis.categories = data.categories;
+                $scope.chartConfig.series = data.Series;
+                $scope.chartConfig.loading = false;
+            });
+            response.error(function(data, status, headers, config) {
+                alert("AJAX failed!");
+                $scope.chartConfig.loading = false;
+            });
+        };
+
+        $scope.chartConfig = {
+            options: {
+                chart: {
+                    type: 'column',
+                    zoomType: 'x'
+                }
+            },
+            series: [
+                {
+                    data: []
+                }
+            ],
+            title: {
+                text: 'Gráfico'
+            },
+            xAxis: {
+                categories: []
+            },
+            loading: false
+        };
+    });
+
+</script>

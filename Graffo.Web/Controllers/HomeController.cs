@@ -1,16 +1,20 @@
 ﻿using System.Web.Mvc;
+using Graffo.Core.BO;
 using Graffo.Entidades;
-using Graffo.Web.BO;
 
-namespace Graffo.Controllers
+namespace Graffo.Web.Controllers
 {
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            var chart = new ChartFactory(ChartType.QuantidadeDeCartoesDasListasPorImportacao).GetChart();
+            return View();
+        }
 
-            return View(chart);
+        public ActionResult LoadChart()
+        {
+            var chart = new ChartDataFactory(ChartType.QuantidadeDeCartoesPorLista).GetData();
+            return Json(chart, JsonRequestBehavior.AllowGet);
         }
     }
 }

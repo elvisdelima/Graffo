@@ -35,19 +35,44 @@
     <Reference Include="DotNet.Highcharts">
       <HintPath>..\packages\DotNet.Highcharts.4.0\lib\DotNet.Highcharts.dll</HintPath>
     </Reference>
-    <Reference Include="Manatee.Json">
-      <HintPath>..\packages\Manatee.Json.2.5.1\lib\net45\Manatee.Json.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Manatee.StateMachine">
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Manatee.Json, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Manatee.Json.2.6.1\lib\net45\Manatee.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Manatee.StateMachine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Manatee.StateMachine.1.1\lib\net45\Manatee.StateMachine.dll</HintPath>
     </Reference>
-    <Reference Include="Manatee.Trello">
-      <HintPath>..\packages\Manatee.Trello.0.6.9\lib\net45\Manatee.Trello.dll</HintPath>
+    <Reference Include="Manatee.Trello, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Manatee.Trello.1.0.1.2\lib\net45\Manatee.Trello.dll</HintPath>
     </Reference>
-    <Reference Include="Manatee.Trello.ManateeJson">
-      <HintPath>..\packages\Manatee.Trello.ManateeJson.1.1.0\lib\net45\Manatee.Trello.ManateeJson.dll</HintPath>
+    <Reference Include="Manatee.Trello.ManateeJson, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Manatee.Trello.ManateeJson.1.2.0.2\lib\net45\Manatee.Trello.ManateeJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Manatee.Trello.NewtonsoftJson">
+      <HintPath>..\packages\Manatee.Trello.NewtonsoftJson.1.1.0\lib\net45\Manatee.Trello.NewtonsoftJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Manatee.Trello.RestSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Manatee.Trello.RestSharp.1.2.0\lib\net45\Manatee.Trello.RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,11 +81,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BO\ChartDataFactory.cs" />
+    <Compile Include="BO\ImporterFromTrello.cs" />
+    <Compile Include="BO\TrelloConnection.cs" />
+    <Compile Include="DTO\ChartDataResult.cs" />
+    <Compile Include="DTO\QuantidadeDeCartoesPorLista.cs" />
+    <Compile Include="DTO\Serie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BO\" />
-    <Folder Include="DTO\" />
     <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
@@ -99,9 +128,14 @@
     <Content Include="Scripts\Highcharts-4.0.1\js\themes\skies.js" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Graffo.Data\Graffo.Data.csproj">
+      <Project>{DF98463F-6665-43A5-A254-4376EEF21A05}</Project>
+      <Name>Graffo.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Graffo.Entidades\Graffo.Entidades.csproj">
       <Project>{4c63ccc4-9486-499f-bd3c-ccc46d21db51}</Project>
       <Name>Graffo.Entidades</Name>

@@ -39,10 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Board.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="CardMember.cs" />
     <Compile Include="ChartType.cs" />
-    <Compile Include="Data.cs" />
-    <Compile Include="Entidade.cs" />
-    <Compile Include="Interfaces\IEntidade.cs" />
+    <Compile Include="Column.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="EntityImportation.cs" />
+    <Compile Include="Importation.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Member.cs" />
+    <Compile Include="Organization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrelloDataType.cs" />
   </ItemGroup>
