@@ -42,7 +42,7 @@ namespace Graffo.Core.BO
             var idImportation = importation.Id;
 
             var trelloOrganization = new Organization("536955c54113531a42f462f7");
-
+            
             var organization = new Entidades.Organization
             {
                 IdTrello = trelloOrganization.Id,
@@ -74,7 +74,8 @@ namespace Graffo.Core.BO
                         IdBoard = trelloList.Board.Id,
                         IdImportation = idImportation,
                         IdTrello = trelloList.Id,
-                        Name = trelloList.Name
+                        Name = trelloList.Name,
+                        IsArchived = trelloList.IsArchived
                     };
 
                     columnRepo.Add(list);

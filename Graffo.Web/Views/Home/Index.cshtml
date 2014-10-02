@@ -8,16 +8,20 @@
 <div ng-app="myapp">
     <div ng-controller="myctrl">
         <div class="span12">
-            <button class="btn btn-success" ng-click="loadChart()">Carregar Gráfico</button>
+            <button class="btn btn-default" ng-click="loadChart()">Carregar Gráfico</button>
         </div>
         <br/>
         <div class="row">
+
+            <div id="container"></div>
+
             <highchart id="chart1" config="chartConfig" class="span10"></highchart>
         </div>
     </div>
 </div>
 
 <script>
+    
     var myapp = angular.module('myapp', ["highcharts-ng"]);
 
     myapp.controller('myctrl', function ($scope, $http) {
@@ -31,6 +35,7 @@
             response.success(function(data, status, headers, config) {
                 $scope.chartConfig.xAxis.categories = data.categories;
                 $scope.chartConfig.series = data.Series;
+                $scope.chartConfig.title.text = data.Title;
                 $scope.chartConfig.loading = false;
             });
             response.error(function(data, status, headers, config) {
@@ -42,8 +47,19 @@
         $scope.chartConfig = {
             options: {
                 chart: {
-                    type: 'column',
+                    type: 'area',
                     zoomType: 'x'
+                },
+                plotOptions: {
+                    area: {
+                        stacking: 'normal',
+                        lineColor: '#666666',
+                        lineWidth: 1,
+                        marker: {
+                            lineWidth: 1,
+                            lineColor: '#666666'
+                        }
+                    }
                 }
             },
             series: [
@@ -55,10 +71,11 @@
                 text: 'Gráfico'
             },
             xAxis: {
-                categories: []
+                categories: [],
+                tickmarkPlacement: 'on'
             },
             loading: false
         };
     });
-
+        
 </script>

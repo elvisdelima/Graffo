@@ -79,14 +79,21 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TrelloNet">
+      <HintPath>..\packages\Trello.Net.Edge.0.7.0\lib\net40-Client\TrelloNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BO\ChartDataFactory.cs" />
+    <Compile Include="BO\ChartReturn.cs" />
+    <Compile Include="BO\CumulativeFlow.cs" />
     <Compile Include="BO\ImporterFromTrello.cs" />
     <Compile Include="BO\TrelloConnection.cs" />
     <Compile Include="DTO\ChartDataResult.cs" />
+    <Compile Include="DTO\QuantidadeDeCartoesDasListasPorImportacao.cs" />
     <Compile Include="DTO\QuantidadeDeCartoesPorLista.cs" />
     <Compile Include="DTO\Serie.cs" />
+    <Compile Include="Extensions\DateExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
